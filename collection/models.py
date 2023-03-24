@@ -8,7 +8,8 @@ from movie.models import Movie
 
 class Collection(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=255, null=True)
+    title = models.CharField(max_length=255, null=True, blank=True,
+                             unique=True, db_index=True)
     description = models.CharField(max_length=1000, null=True)
     movie = models.ManyToManyField(Movie, related_name="movie_collection",
                                    blank=True)
