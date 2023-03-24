@@ -21,4 +21,5 @@ urlpatterns = [
     path('movies/', include('movie.urls')),
     path('register/', include('user.urls')),
     path('collection/', include('collection.urls')),
+    path('request-count/', include('request_counter.urls'))
 ]
